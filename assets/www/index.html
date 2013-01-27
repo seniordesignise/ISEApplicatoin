@@ -21,11 +21,19 @@ window.addEventListener('load', function () {
 }, false);
 
 function enableBT() {
+try{
+alert('enabling');
 	window.plugins.BluetoothPlugin.enable( function() {
 		alert( 'Enabling successfull' );
 	}, function(error) {
 		alert( 'Error enabling BT: ' + error );
 	} );
+}
+catch(e)
+{
+	alert('fail:' + e);
+}
+	
 }
 
 function disableBT() {
